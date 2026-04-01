@@ -23,19 +23,19 @@
       <div class="menu">
         <ion-card router-link="/eventos">
           <ion-card-content>
-            🎫 Eventos
+            Eventos
           </ion-card-content>
         </ion-card>
 
         <ion-card router-link="/favoritos">
           <ion-card-content>
-            ⭐ Favoritos
+            Favoritos
           </ion-card-content>
         </ion-card>
 
         <ion-card router-link="/perfil">
           <ion-card-content>
-            👤 Perfil
+            Perfil
           </ion-card-content>
         </ion-card>
       </div>
@@ -72,7 +72,6 @@ import {
   color: gray;
 }
 
-/* Grid simples */
 .menu {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -87,7 +86,6 @@ ion-card {
   border-radius: 12px;
 }
 
-/* efeito hover */
 ion-card:hover {
   transform: scale(1.03);
   transition: 0.2s;
