@@ -6,6 +6,11 @@
 
     <ion-card-content>
       <p>{{ event.local }}</p>
+
+      <ion-button :router-link="`/eventos/${event.id}`">
+        Ver Detalhes
+      </ion-button>
+
       <ion-button @click="$emit('favoritar', event)">
         Favoritar
       </ion-button>
@@ -14,6 +19,8 @@
 </template>
 
 <script setup>
-defineProps(['event']);
-defineEmits(['favoritar']);
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton } from '@ionic/vue'
+
+defineProps(['event'])
+defineEmits(['favoritar'])
 </script>

@@ -1,56 +1,95 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-title>SmartEvent</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content class="ion-padding">
 
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <!-- Banner -->
+      <div class="banner">
+        <h1>SmartEvent</h1>
+        <p>Descubra eventos incríveis perto de você</p>
       </div>
+
+      <!-- Botão principal -->
+      <ion-button expand="block" size="large" router-link="/eventos">
+        Explorar Eventos
+      </ion-button>
+
+      <!-- Menu rápido -->
+      <div class="menu">
+        <ion-card router-link="/eventos">
+          <ion-card-content>
+            🎫 Eventos
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card router-link="/favoritos">
+          <ion-card-content>
+            ⭐ Favoritos
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card router-link="/perfil">
+          <ion-card-content>
+            👤 Perfil
+          </ion-card-content>
+        </ion-card>
+      </div>
+
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+<script setup>
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButton,
+  IonCard,
+  IonCardContent
+} from '@ionic/vue';
 </script>
 
 <style scoped>
-#container {
+.banner {
   text-align: center;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-bottom: 30px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.banner h1 {
+  font-size: 28px;
+  font-weight: bold;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
+.banner p {
+  color: gray;
 }
 
-#container a {
-  text-decoration: none;
+/* Grid simples */
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+ion-card {
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+/* efeito hover */
+ion-card:hover {
+  transform: scale(1.03);
+  transition: 0.2s;
 }
 </style>
